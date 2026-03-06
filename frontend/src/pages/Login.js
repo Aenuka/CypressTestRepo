@@ -30,14 +30,14 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
+    <div className="login-container">
+      <div className="form-wrapper">
         <h2>Login</h2>
         {error && <div className="error-message">{error}</div>}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -50,7 +50,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
               id="password"
@@ -67,8 +67,8 @@ const Login = () => {
           </button>
         </form>
 
-        <p className="auth-link">
-          Don't have an account? <a href="/register">Register here</a>
+        <p>
+          Don't have an account? <a href="/register">Register</a>
         </p>
       </div>
     </div>
