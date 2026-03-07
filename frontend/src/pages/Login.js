@@ -23,7 +23,13 @@ const Login = () => {
       await login(formData.email, formData.password);
       navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'Login failed');
+      // AuthContext may throw either an Error object or a plain message string.
+      const resolvedMessage =
+        typeof err === 'string'
+          ? err
+          : err?.response?.data?.message || err?.message || 'Login failed';
+
+      setError(resolvedMessage);
     } finally {
       setLoading(false);
     }
